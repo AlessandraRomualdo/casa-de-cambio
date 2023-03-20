@@ -5,12 +5,15 @@ import Swal from 'sweetalert2';
 const moeda = document.getElementById('moeda');
 const btnSearch = document.getElementById('pesquisar');
 const lista = document.getElementById('list');
+const h2 = document.getElementById('coin-title');
 
 
 const BASE_URL = 'https://api.exchangerate.host/latest?base=';
 
 btnSearch.addEventListener('click', () => {
     const coin = moeda.value;
+    lista.innerHTML = '';
+    h2.innerHTML = `Valores referente a 1 ${coin.toUpperCase()} 💰`;
     if (!coin){
         Swal.fire({
             title: 'Erro',
@@ -24,7 +27,7 @@ btnSearch.addEventListener('click', () => {
         const currency = Object.entries(data.rates);
         currency.forEach((elem) => {
             const li = document.createElement('li');
-            li.innerHTML = `<b>${elem[0]}</b> ${elem[1].toFixed(3)}`;
+            li.innerHTML = `🪙 <b>${elem[0]}</b> - ${elem[1].toFixed(3)}`;
             lista.appendChild(li);
         });
        
@@ -38,5 +41,6 @@ btnSearch.addEventListener('click', () => {
             icon: 'error',
             confirmButtonText: 'Tente novamente',
         });
+        h2.innerHTML = '';
     });
 });

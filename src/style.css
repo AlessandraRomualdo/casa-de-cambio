@@ -22,7 +22,7 @@ header h1 {
   color: #FFFFFF;
 }
 
-label {
+.label {
   position: absolute;
   width: 111px;
   height: 15px;
@@ -34,7 +34,7 @@ label {
   color: #FFFFFF;
 }
 
-input {
+.input {
   position: absolute;
   left: 306px;
   top: 185px;
@@ -44,7 +44,7 @@ input {
   border-radius: 10px;
 }
 
-button {
+#pesquisar {
   position: absolute;
   width: 171px;
   height: 48px;
@@ -57,13 +57,28 @@ button {
   cursor: pointer;
 }
 
-div {
+.result {
   position: absolute;
   width: 900px;
   height: 583px;
   left: 306px;
   top: 290px;
-
   background: rgba(255, 255, 255, 0.06);
   border-radius: 20px;
+}
+
+ul {
+  height: 580px;
+  width: 890px;
+  overflow-y: scroll;
+}
+
+ul li {
+  width: 190px;
+  text-align: center;
+  display: inline-block;
+  border: 1px solid white;
+  border-radius: 8px;
+  padding: 15px;
+  margin: 10px;
 }
